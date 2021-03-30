@@ -180,7 +180,13 @@ class QuestionViewController: UIViewController {
     }
     
     func nextQuestion() {
+        questionIndex += 1
         
+        if questionIndex < questions.count {
+            updateUI()
+        } else {
+            performSegue(withIdentifier: "ResultSegue", sender: nil)
+        }
     }
     
 }
