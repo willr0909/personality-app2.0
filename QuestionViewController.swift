@@ -11,26 +11,26 @@ class QuestionViewController: UIViewController {
 
     @IBOutlet weak var questionOne: UIStackView!
     
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+    @IBOutlet weak var buttonThree: UIButton!
+    @IBOutlet weak var buttonFour: UIButton!
     
     @IBOutlet weak var questionTwo: UIStackView!
     
-    @IBOutlet weak var button5: UIButton!
-    @IBOutlet weak var button6: UIButton!
-    @IBOutlet weak var button7: UIButton!
-    @IBOutlet weak var button8: UIButton!
+    @IBOutlet weak var buttonFive: UIButton!
+    @IBOutlet weak var buttonSix: UIButton!
+    @IBOutlet weak var buttonSeven: UIButton!
+    @IBOutlet weak var buttonEight: UIButton!
     
     
     
     @IBOutlet weak var questionThree: UIStackView!
     
-    @IBOutlet weak var button9: UIButton!
-    @IBOutlet weak var button10: UIButton!
-    @IBOutlet weak var button11: UIButton!
-    @IBOutlet weak var button12: UIButton!
+    @IBOutlet weak var buttonNine: UIButton!
+    @IBOutlet weak var buttonTen: UIButton!
+    @IBOutlet weak var buttonEleven: UIButton!
+    @IBOutlet weak var buttonTwelve: UIButton!
     
     
     
@@ -101,25 +101,25 @@ class QuestionViewController: UIViewController {
     
     func updateQuesionOneStackView(using answers: [Answer]) {
         questionOne.isHidden = false
-        button1.setTitle(answers[0].text, for: .normal)
-        button2.setTitle(answers[1].text, for: .normal)
-        button3.setTitle(answers[2].text, for: .normal)
-        button4.setTitle(answers[3].text, for: .normal)
+        buttonOne.setTitle(answers[0].text, for: .normal)
+        buttonTwo.setTitle(answers[1].text, for: .normal)
+        buttonThree.setTitle(answers[2].text, for: .normal)
+        buttonFour.setTitle(answers[3].text, for: .normal)
     }
     
     func updateQuesionTwoStackView(using answers: [Answer]) {
         questionTwo.isHidden = false
-        button5.setTitle(answers[0].text, for: .normal)
-        button6.setTitle(answers[1].text, for: .normal)
-        button7.setTitle(answers[2].text, for: .normal)
-        button8.setTitle(answers[3].text, for: .normal)
+        buttonFive.setTitle(answers[0].text, for: .normal)
+        buttonSix.setTitle(answers[1].text, for: .normal)
+        buttonSeven.setTitle(answers[2].text, for: .normal)
+        buttonEight.setTitle(answers[3].text, for: .normal)
     }
     
     func updateQuesionThreeStackView(using answers: [Answer]) {
         questionThree.isHidden = false
-        button9.setTitle(answers[0].text, for: .normal)
-        button10.setTitle(answers[1].text, for: .normal)
-        button11.setTitle(answers[2].text, for: .normal)
-        button12.setTitle(answers[3].text, for: .normal)
+        buttonNine.setTitle(answers[0].text, for: .normal)
+        buttonTen.setTitle(answers[1].text, for: .normal)
+        buttonEleven.setTitle(answers[2].text, for: .normal)
+        buttonTwelve.setTitle(answers[3].text, for: .normal)
     }
 }
