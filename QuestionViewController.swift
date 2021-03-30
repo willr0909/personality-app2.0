@@ -65,6 +65,8 @@ class QuestionViewController: UIViewController {
     
     var questionIndex = 0
     
+    var answersChosen: [Answer] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +75,8 @@ class QuestionViewController: UIViewController {
 
     }
     func updateUI() {
-        questionOne.isHidden = true
         questionTwo.isHidden = true
+        questionOne.isHidden = true
         questionThree.isHidden = true
         
         navigationItem.title = "Question #\(questionIndex + 1)"
@@ -89,37 +91,96 @@ class QuestionViewController: UIViewController {
         switch currentQuestion.type {
         case .question1:
             
-            updateQuesionOneStackView(using: currentAnswers)
+            updateOne(using: currentAnswers)
         case .question2:
             
-            updateQuesionTwoStackView(using: currentAnswers)
+            updateTwo(using: currentAnswers)
         case .question3:
             
-            updateQuesionThreeStackView(using: currentAnswers)
+            updateThree(using: currentAnswers)
         }
     }
     
-    func updateQuesionOneStackView(using answers: [Answer]) {
+    
+    func updateOne(using answers: [Answer]) {
         questionOne.isHidden = false
         buttonOne.setTitle(answers[0].text, for: .normal)
         buttonTwo.setTitle(answers[1].text, for: .normal)
         buttonThree.setTitle(answers[2].text, for: .normal)
         buttonFour.setTitle(answers[3].text, for: .normal)
     }
-    
-    func updateQuesionTwoStackView(using answers: [Answer]) {
+    func updateTwo(using answers: [Answer]) {
         questionTwo.isHidden = false
         buttonFive.setTitle(answers[0].text, for: .normal)
         buttonSix.setTitle(answers[1].text, for: .normal)
         buttonSeven.setTitle(answers[2].text, for: .normal)
         buttonEight.setTitle(answers[3].text, for: .normal)
     }
-    
-    func updateQuesionThreeStackView(using answers: [Answer]) {
+    func updateThree(using answers: [Answer]) {
         questionThree.isHidden = false
         buttonNine.setTitle(answers[0].text, for: .normal)
         buttonTen.setTitle(answers[1].text, for: .normal)
         buttonEleven.setTitle(answers[2].text, for: .normal)
         buttonTwelve.setTitle(answers[3].text, for: .normal)
     }
+    @IBAction func QuestionOnePressed(_ sender: UIButton) {
+        let currentAnswers = questions[questionIndex].answers
+        
+        switch sender {
+        case buttonOne:
+            answersChosen.append(currentAnswers[0])
+        case buttonTwo:
+            answersChosen.append(currentAnswers[1])
+        case buttonThree:
+            answersChosen.append(currentAnswers[2])
+        case buttonFour:
+            answersChosen.append(currentAnswers[3])
+        default:
+            break
+        }
+        nextQuestion()
+        
+    }
+    
+
+    @IBAction func QuestionTwoPressed(_ sender: UIButton) {
+        let currentAnswers = questions[questionIndex].answers
+        
+        switch sender {
+        case buttonFive:
+            answersChosen.append(currentAnswers[0])
+        case buttonSix:
+            answersChosen.append(currentAnswers[1])
+        case buttonSeven:
+            answersChosen.append(currentAnswers[2])
+        case buttonEight:
+            answersChosen.append(currentAnswers[3])
+        default:
+            break
+        }
+        nextQuestion()
+    }
+    
+    @IBAction func QuestionThreePressed(_ sender: UIButton) {
+        let currentAnswers = questions[questionIndex].answers
+        
+        switch sender {
+        case buttonNine:
+            answersChosen.append(currentAnswers[0])
+        case buttonTen:
+            answersChosen.append(currentAnswers[1])
+        case buttonEleven:
+            answersChosen.append(currentAnswers[2])
+        case buttonTwelve:
+            answersChosen.append(currentAnswers[3])
+        default:
+            break
+        }
+        nextQuestion()
+    }
+    
+    func nextQuestion() {
+        
+    }
+    
 }
